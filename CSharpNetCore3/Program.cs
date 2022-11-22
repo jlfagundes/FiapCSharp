@@ -9,7 +9,16 @@ namespace CSharpNetCore3
         {
             Console.WriteLine("Hello World!");
             int valor = 10;
+
+            valor += 1;
+
+            Console.WriteLine(valor);
+
+            /*
             double valorDouble = 10.5;
+            bool valorBool = true;
+            string valorString = "José";
+            */
 
 
 
