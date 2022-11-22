@@ -12,6 +12,14 @@ namespace CSharpNetCore3
 
             valor += 1;
 
+            if ( valor == 10 )
+            {
+                Console.WriteLine("O valor é igual a 10");
+            } else
+            {
+                Console.WriteLine("O valor é diferente de 10");
+            }
+
             Console.WriteLine(valor);
 
             /*
