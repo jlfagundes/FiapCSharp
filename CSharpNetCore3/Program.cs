@@ -8,6 +8,15 @@ namespace CSharpNetCore3
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            string[] lista = { "a", "b", "c" };
+
+            foreach (var item in lista)
+            {
+                Console.WriteLine(item);
+            }
+            
+            /*
             int valor = 10;
 
             valor += 1;
@@ -21,6 +30,8 @@ namespace CSharpNetCore3
             }
 
             Console.WriteLine(valor);
+            */
+
 
             /*
             double valorDouble = 10.5;
