@@ -11,5 +11,10 @@ namespace CSharpNetCore3.Models
         {
             Console.WriteLine(Metodo());
         }
+
+        public override string Metodo()
+        {
+            return "Método da ClasseBase alterado na classe Derivada";
+        }
     }
 }

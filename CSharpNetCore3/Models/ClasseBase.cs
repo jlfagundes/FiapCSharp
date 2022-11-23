@@ -7,7 +7,7 @@ namespace CSharpNetCore3.Models
     internal class ClasseBase
     {
         // Declarando um método (função)
-        public string Metodo()
+        public virtual string Metodo()
         {
             return "Método Classe Base";
         }
