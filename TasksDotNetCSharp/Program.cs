@@ -12,7 +12,7 @@ Console.WriteLine("Pressione qualquer tecla para visualizar o novo salário");
 Console.Read();
 // Console.Clear(); // limpar o console
 
-newPayment = payment + (payment * increase;
+newPayment = payment + (payment * increase);
 
 Console.WriteLine($"Seu novo salário é de: {newPayment}");
 Console.Read();
