@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Dynamic;
+using CSharpNetCore3.Models;
 
 namespace CSharpNetCore3
 {
@@ -9,12 +10,18 @@ namespace CSharpNetCore3
         {
             Console.WriteLine("Hello World!");
 
+            Derivada pooTest = new Derivada();
+
+            Console.WriteLine(pooTest);
+
+            /*
             string[] lista = { "a", "b", "c" };
 
             foreach (var item in lista)
             {
                 Console.WriteLine(item);
             }
+            */
             
             /*
             int valor = 10;
