@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Dynamic;
+using CSharpNetCore3.Exceptions;
 using CSharpNetCore3.Models;
 
 namespace CSharpNetCore3
@@ -8,13 +9,16 @@ namespace CSharpNetCore3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Console.WriteLine("Hello World!");
+            throw new PersonalizadaExeption("Nome do inválido");
 
+            /* // Aprendendo polimorfismo no c#
             Derivada pooTest = new Derivada();
 
             Console.WriteLine(pooTest);
-
             /*
+
+            /* // Percorrendo um array com foreach
             string[] lista = { "a", "b", "c" };
 
             foreach (var item in lista)
