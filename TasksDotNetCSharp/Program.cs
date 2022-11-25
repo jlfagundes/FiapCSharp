@@ -1,5 +1,42 @@
-﻿using System;
-using TasksDotNetCSharp.Tasks;
+﻿/*
+internal class program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Main");
+    }
+}
+*/
+
+using TasksDotNetCSharp.Models;
+
+IList<Employees> list1= new List<Employees>();
+IList<EmployeesOld> list2= new List<EmployeesOld>();
+
+EmployeesOld newEmployee = new EmployeesOld();
+newEmployee.name = "jose";
+
+list1.Add(newEmployee);
+list2.Add(newEmployee);
+
+foreach (var item in list1)
+{
+    Console.WriteLine(item.name);
+
+}
+
+foreach (var item in list2)
+{
+    Console.WriteLine(item.name);
+
+}
+
+
+Console.Read();
+
+/*
+using System;
+using TasksDotNetCSharp.Models;
 
 // Task 2 - 24-11-22 até 28-11-22
 Console.WriteLine("\nCONTROLE DE REAJUSTE SALARIAL");
@@ -11,8 +48,8 @@ string addEmployee;
 
 // Criando listas de funcionários elegiveis e não elegiveis
 IList<Employees> listEmployees = new List<Employees>();
-IList<Employees> listEmployeesOld = new List<Employees>();
-IList<Employees> listEmployeesOldLimited = new List<Employees>();
+IList<EmployeesOld> listEmployeesOld = new List<EmployeesOld>();
+IList<EmployeesOld> listEmployeesOldLimited = new List<EmployeesOld>();
 
 
 do
@@ -129,3 +166,4 @@ do
 } while (addEmployee == "s");
 
 Console.Read();
+*/
