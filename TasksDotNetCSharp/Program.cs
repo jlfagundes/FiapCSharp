@@ -1,41 +1,4 @@
-﻿/*
-internal class program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Main");
-    }
-}
-*/
-
-using TasksDotNetCSharp.Models;
-
-IList<Employees> list1= new List<Employees>();
-IList<EmployeesOld> list2= new List<EmployeesOld>();
-
-EmployeesOld newEmployee = new EmployeesOld();
-newEmployee.name = "jose";
-
-list1.Add(newEmployee);
-list2.Add(newEmployee);
-
-foreach (var item in list1)
-{
-    Console.WriteLine(item.name);
-
-}
-
-foreach (var item in list2)
-{
-    Console.WriteLine(item.name);
-
-}
-
-
-Console.Read();
-
-/*
-using System;
+﻿using System;
 using TasksDotNetCSharp.Models;
 
 // Task 2 - 24-11-22 até 28-11-22
@@ -166,4 +129,3 @@ do
 } while (addEmployee == "s");
 
 Console.Read();
-*/
