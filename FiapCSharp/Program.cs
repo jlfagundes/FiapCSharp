@@ -5,8 +5,9 @@ public class Example
 {
     public static void Main()
     {
-        // **************************/ /***************************************
+        // **************************/ Exibindo a tecla no console /***************************************
 
+        /*
         // Imprimindo no console a tecla pressionada
         ConsoleKeyInfo cki;
         // Prevent example from ending if CTL+C is pressed.
@@ -21,6 +22,16 @@ public class Example
             if ((cki.Modifiers & ConsoleModifiers.Alt) != 0) Console.Write("ALT+");
             if ((cki.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
             if ((cki.Modifiers & ConsoleModifiers.Control) != 0) Console.Write("CTL+");
+            Console.WriteLine(cki.Key.ToString());
+        } while (cki.Key != ConsoleKey.Escape);
+        */
+
+        ConsoleKeyInfo cki;
+        do
+        {
+            Console.Write("\nPRESSIONE UMA TECLA - PARA SAIR PRESSIONE ESC: ");
+            cki = Console.ReadKey();
+            Console.Write("\nVoce pressionou a tecla: ");
             Console.WriteLine(cki.Key.ToString());
         } while (cki.Key != ConsoleKey.Escape);
 
