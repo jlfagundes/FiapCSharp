@@ -13,7 +13,22 @@ namespace CSharpNetCore3
         {
             Console.WriteLine("Hello World!");
 
-            // Aprendendo sobre coleções (listas) = evolução dos arrays
+            // Aprendendo sobre dictionary
+            IDictionary<string, string> dicionario = new Dictionary<string, string>();
+            dicionario["um"] = "valor Um";
+            dicionario["dois"] = "valor Dois";
+            dicionario["tres"] = "valor Tres";
+
+            Console.WriteLine(dicionario["tres"]);
+
+            foreach (KeyValuePair<string, string> item in dicionario)
+            {
+                string chave = item.Key;
+                string valor = dicionario[chave];
+                Console.WriteLine(valor);
+            }
+
+            /* // Aprendendo sobre coleções (listas) = evolução dos arrays
             string[] colecao = { "a", "b", "c" };
 
             IList<string> lista = new List<string>();
@@ -31,6 +46,7 @@ namespace CSharpNetCore3
                 Console.WriteLine(item);
 
             }
+            */
             
             // throw new PersonalizadaExeption("Nome do inválido");
 
