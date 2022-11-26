@@ -12,10 +12,10 @@ namespace TasksDotNetCSharp.Models
         public string name { get; set; }
         public string roll { get; set; }
         public double payment { get; set; }
-        public string yearAdmission { get; set; }
+        public int yearAdmission { get; set; }
 
         public Employees() { }
-        public Employees(string name, string roll, double payment, string yearAdmission)
+        public Employees(string name, string roll, double payment, int yearAdmission)
         {
             this.name = name;
             this.roll = roll;
@@ -23,7 +23,7 @@ namespace TasksDotNetCSharp.Models
             this.yearAdmission = yearAdmission;
         }
 
-        static public Employees addEmployee(string name, string roll, double payment, string yearAdmission)
+        static public Employees addEmployee(string name, string roll, double payment, int yearAdmission)
         {
             Employees newEmployee = new Employees(name, roll, payment, yearAdmission);
             return newEmployee;

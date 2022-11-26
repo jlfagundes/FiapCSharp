@@ -1,20 +1,55 @@
 ﻿using System;
+using TasksDotNetCSharp.Menu;
 using TasksDotNetCSharp.Models;
+using TasksDotNetCSharp.Services;
 
 // Task 2 - 24-11-22 até 28-11-22
-Console.WriteLine("\nCONTROLE DE REAJUSTE SALARIAL");
-Console.WriteLine("----------------------------- \n");
+Menu.HomePage("");
 
-// Variavel para cadastrar ou não um novo funcionário
-string addEmployee;
+List<EmployeesOld> listEmployees = new List<EmployeesOld>();
 
+do
+{
+    switch (Console.ReadKey().Key)
+    {
+        case ConsoleKey.F9:
+            Employees newEmployee = Register.RegisterEmployee();
+            if (newEmployee.yearAdmission == 2022)
+            {
+                EmployeesOld newEmployeeOld = new EmployeesOld(
+                    newEmployee.name,
+                    newEmployee.roll,
+                    newEmployee.payment,
+                    newEmployee.yearAdmission,
+                    false);
+                listEmployees.Add(newEmployeeOld);
+            }
+            else
+            {
+                EmployeesOld newEmployeeNew = new EmployeesOld(
+                    newEmployee.name,
+                    newEmployee.roll,
+                    newEmployee.payment,
+                    newEmployee.yearAdmission,
+                    true);
+                listEmployees.Add(newEmployeeNew);
+            }
+            
+            Menu.HomePage("Funcionário cadastrado com sucesso");
+            break;
+        case ConsoleKey.F10:
+            Report.ReportEmployees(listEmployees);
 
-// Criando listas de funcionários elegiveis e não elegiveis
-IList<Employees> listEmployees = new List<Employees>();
-IList<EmployeesOld> listEmployeesOld = new List<EmployeesOld>();
-IList<EmployeesOld> listEmployeesOldLimited = new List<EmployeesOld>();
+            break;
+        case ConsoleKey.F7:
 
+            break;
+        default:
+            break;
+    }
+} while (Console.ReadKey().Key != ConsoleKey.Escape);
 
+/* // PRIMEIRA SOLUÇÃO DESENVOLVIDA
 do
 {
     // Cadastrar funcionários
@@ -129,3 +164,4 @@ do
 } while (addEmployee == "s");
 
 Console.Read();
+*/

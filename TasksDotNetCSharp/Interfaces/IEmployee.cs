@@ -11,6 +11,6 @@ namespace TasksDotNetCSharp.Interfaces
         public string name { get; set; }
         public string roll { get; set; }
         public double payment { get; set; }
-        public string yearAdmission { get; set; }
+        public int yearAdmission { get; set; }
     }
 }
