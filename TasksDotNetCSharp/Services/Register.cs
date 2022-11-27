@@ -9,10 +9,12 @@ namespace TasksDotNetCSharp.Services
 {
     internal class Register
     {
-        static public Employees RegisterEmployee()
+        static public Employees RegisterEmployee(List<Employees> arrayList)
         {
             Console.Clear();
-            Console.Write("Digite o nome do novo funcionário: ");
+            Console.WriteLine("\nCADASTRO DE FUNCIONÁRIOS");
+            Console.WriteLine("--------------------------------");
+            Console.Write("\nDigite o nome do novo funcionário: ");
             string nameEmployee = Console.ReadLine();
 
             Console.Write("Digite o cargo: ");
@@ -24,11 +26,27 @@ namespace TasksDotNetCSharp.Services
             Console.Write("Digite o ano de admissão do funcionário: ");
             int yearAdmission = int.Parse(Console.ReadLine());
 
-            Employees newEmployee = Employees.addEmployee(
+            Employees newEmployee;
+
+            if (yearAdmission < 2022)
+            {
+                newEmployee = Employees.AddEmployee(
                 nameEmployee,
                 vaccationEmployee,
                 payment,
-                yearAdmission);
+                yearAdmission,
+                true);
+            } else
+            {
+                newEmployee = Employees.AddEmployee(
+                nameEmployee,
+                vaccationEmployee,
+                payment,
+                yearAdmission,
+                false);
+            }
+
+            arrayList.Add(newEmployee);
 
             return newEmployee;
         }

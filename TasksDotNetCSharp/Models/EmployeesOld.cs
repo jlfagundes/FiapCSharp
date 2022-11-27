@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 
 namespace TasksDotNetCSharp.Models
 {
-    internal class EmployeesOld : Employees
+    public class EmployeesOld : Employees
     {
-        public bool isEmployeeOld { get; set; }
         public EmployeesOld() : base()
         {
         }
-        public EmployeesOld(string name, string roll, double payment, int yearAdmission, bool isEmployeeOld) : base()
+        public EmployeesOld(string name, string role, double payment, int yearAdmission, bool isEmployeeOld) : base()
         {
             this.isEmployeeOld = isEmployeeOld;
             this.name = name;
-            this.roll = roll;
+            this.role = role;
+            this.yearAdmission = yearAdmission;
             this.payment = payment;
         }
+
     }
 }
