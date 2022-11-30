@@ -42,6 +42,7 @@ namespace Tarefa_ASPNET_MVC.Repository
 
             return listaPessoa;
         }
+
         public void Inserir(Pessoa pessoa)
         {
             var connectionString = new ConfigurationBuilder()

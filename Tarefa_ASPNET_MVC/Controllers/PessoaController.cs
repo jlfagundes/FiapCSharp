@@ -45,8 +45,8 @@ namespace Tarefa_ASPNET_MVC.Controllers
         [HttpGet]
         public ActionResult Editar(int Id)
         {
-            var tipoProduto = pessoaRepository.Consultar(Id);
-            return View(tipoProduto);
+            var pessoa = pessoaRepository.Consultar(Id);
+            return View(pessoa);
         }
 
         [HttpPost]
