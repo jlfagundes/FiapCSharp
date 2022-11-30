@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpNetCore3", "CSharpNet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksDotNetCSharp", "TasksDotNetCSharp\TasksDotNetCSharp.csproj", "{3A88727F-F368-43D7-BD11-A9E1EDE090E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapSmartCity", "FiapSmartCity\FiapSmartCity.csproj", "{DD3ECA66-AAEC-47A5-8747-D935F95A698A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapSmartCity", "FiapSmartCity\FiapSmartCity.csproj", "{DD3ECA66-AAEC-47A5-8747-D935F95A698A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarefa_ASPNET_MVC", "Tarefa_ASPNET_MVC\Tarefa_ASPNET_MVC.csproj", "{EA824DB7-5B50-4CD8-9F6D-E086A6742E33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DD3ECA66-AAEC-47A5-8747-D935F95A698A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD3ECA66-AAEC-47A5-8747-D935F95A698A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD3ECA66-AAEC-47A5-8747-D935F95A698A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA824DB7-5B50-4CD8-9F6D-E086A6742E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA824DB7-5B50-4CD8-9F6D-E086A6742E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA824DB7-5B50-4CD8-9F6D-E086A6742E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA824DB7-5B50-4CD8-9F6D-E086A6742E33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

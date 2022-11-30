@@ -1,16 +1,54 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    O comando Layout = null zera o layout sem o quie foi definido no shared
 *@
+@model IEnumerable<FiapSmartCity.Models.TipoProduto>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Tipo de Produto</title>
 </head>
 <body>
-    <div>
-        Executando Controller <b>TipoProduto</b> e a Action <b>Index</b>
-    </div>
+    <h1>Tipo de Produto</h1>
+    <p>
+        <!-- uso de TagHelpers para definir o Controller e a Action -->
+        <a asp-controller="TipoProduto" asp-action="Cadastrar">Novo Tipo</a>
+    </p>
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Descrição</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label>@item.IdTypeProduct</label>
+                </td>
+                <td>
+                    <label>@item.DescriptionTypeProduct</label>
+                </td>
+                <td>
+
+                    <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
+                    <a asp-controller="TipoProduto" 
+                       asp-action="Editar" 
+                       asp-route-id="@item.IdTypeProduct">Editar</a>
+
+                    <a asp-controller="TipoProduto" 
+                       asp-action="Consultar" 
+                       asp-route-id="@item.IdTypeProduct">Consultar</a>
+
+                    <a asp-controller="TipoProduto" 
+                       asp-action="Excluir" 
+                       asp-route-id="@item.IdTypeProduct">Excluir</a>
+                </td>
+            </tr>
+        }
+    </table>
 </body>
 </html>
