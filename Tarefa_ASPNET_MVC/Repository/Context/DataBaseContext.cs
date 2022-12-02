@@ -6,6 +6,7 @@ namespace Tarefa_ASPNET_MVC.Repository.Context
     public class DataBaseContext : DbContext
     {
         public DbSet<Animal> Animal { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

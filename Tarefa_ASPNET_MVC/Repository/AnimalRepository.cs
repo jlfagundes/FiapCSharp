@@ -18,5 +18,11 @@ namespace Tarefa_ASPNET_MVC.Repository
             return context.Animal.ToList();
         }
 
+        public void Inserir(Animal animal)
+        {
+            context.Animal.Add(animal);
+            context.SaveChanges();
+        }
+
     }
 }

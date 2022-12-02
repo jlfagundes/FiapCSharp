@@ -16,6 +16,6 @@ namespace Tarefa_ASPNET_MVC.Models
 
         public string Especie { get; set; }
 
-        public float Peso { get; set; }
+        public string Peso { get; set; }
     }
 }

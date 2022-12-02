@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
@@ -9,6 +10,14 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<!-- Verifica se a chave "Mensagem" existe no TempData -->
+@if (@TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <!-- Imprime para o usuário a mensagem -->
+    @TempData["Mensagem"]
+    </div>
+}
 <table class="table">
     <thead>
         <tr>

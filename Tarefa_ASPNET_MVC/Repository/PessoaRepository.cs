@@ -2,11 +2,20 @@
 using System.Data;
 using System.Data.SqlClient;
 using Tarefa_ASPNET_MVC.Utils;
+using Tarefa_ASPNET_MVC.Repository.Context;
+
 
 namespace Tarefa_ASPNET_MVC.Repository
 {
+    
     public class PessoaRepository
     {
+        public readonly DataBaseContext context;
+
+        public PessoaRepository()
+        {
+            context = new DataBaseContext();
+        }
         public IList<Pessoa> Listar()
         {
             IList<Pessoa> listaPessoa = new List<Pessoa>();
@@ -43,6 +52,7 @@ namespace Tarefa_ASPNET_MVC.Repository
             return listaPessoa;
         }
 
+        /*
         public void Inserir(Pessoa pessoa)
         {
             var connectionString = new ConfigurationBuilder()
@@ -71,6 +81,12 @@ namespace Tarefa_ASPNET_MVC.Repository
 
             }
 
+        }
+        */
+        public void Inserir(Pessoa pessoa)
+        {
+            context.Pessoa.Add(pessoa);
+            context.SaveChanges();
         }
         public Pessoa Consultar(int id)
         {
