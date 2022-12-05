@@ -9,13 +9,19 @@ namespace FiapSmartCityWebAPI.Controllers
     [ApiController]
     public class AnimalController : ControllerBase
     {
+        public readonly AnimalRepository animalRepository;
+        public AnimalController()
+        { 
+            animalRepository= new AnimalRepository();
+        }
+
         [HttpGet]
         [Route("GetAnimal")]
         public IActionResult Get()
         {
             try
             {
-                return Ok(new AnimalRepository().Listar());
+                return Ok(animalRepository.Listar());
             }
             catch (Exception)
             {
@@ -29,7 +35,7 @@ namespace FiapSmartCityWebAPI.Controllers
         {
             try
             {
-                new AnimalRepository().Inserir(animal);
+                animalRepository.Inserir(animal);
 
                 // Cria uma propriedade para efetuar a consulta da informação cadastrada
                 string location = "https://localhost:7013/FiapSmartCityWebAPI";
@@ -42,5 +48,36 @@ namespace FiapSmartCityWebAPI.Controllers
                 throw new Exception("Erro ao cadastrar os dados no banco"); ;
             }
         }
+
+        [HttpDelete(Name = "GetAnimal")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                animalRepository.Deletar(id);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+                throw new Exception("Erro ao deletar os dados no banco"); ;
+            }
+        }
+
+        [HttpPut(Name ="GetAnimal")]
+        public IActionResult Editar([FromBody] Animal animal)
+        {
+            try
+            {
+                animalRepository.Editar(animal);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+                throw new Exception("Erro ao deletar os dados no banco"); ;
+            }
+        }
+
     }
 }

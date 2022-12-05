@@ -24,5 +24,20 @@ namespace FiapSmartCityWebAPI.Repository
             context.SaveChanges();
         }
 
+        public void Editar(Animal animal)
+        {
+            context.Animal.Update(animal);
+            context.SaveChanges();
+        }
+        public void Deletar(int id)
+        {
+            var animal = new Animal()
+            {
+                IdAnimal = id
+            };
+            context.Animal.Remove(animal);
+            context.SaveChanges();
+        }
+
     }
 }
