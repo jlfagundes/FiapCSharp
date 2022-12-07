@@ -37,28 +37,28 @@
         {
             <tr>
                 <td>
-                    <label>@item.Id</label>
+                    <label>@item.IdPessoa</label>
                 </td>
                 <td>
                     <label>@item.Nome</label>
                 </td>
                 <td>
-                    <label>@item.Telefone</label>
+                    <label>@item.Phone</label>
                 </td>
                 <td>
 
                     <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
                     <a asp-controller="Pessoa"
                    asp-action="Editar"
-                   asp-route-id="@item.Id">Editar</a>
+                   asp-route-id="@item.IdPessoa">Editar</a>
 
                     <a asp-controller="Pessoa"
                    asp-action="Consultar"
-                   asp-route-id="@item.Id">Consultar</a>
+                   asp-route-id="@item.IdPessoa">Consultar</a>
 
                     <a asp-controller="Pessoa"
                    asp-action="Excluir"
-                   asp-route-id="@item.Id">Excluir</a>
+                   asp-route-id="@item.IdPessoa">Excluir</a>
                 </td>
             </tr>
         }

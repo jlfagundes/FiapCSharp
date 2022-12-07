@@ -5,7 +5,7 @@ using FiapSmartCityWebAPI.Models;
 
 namespace FiapSmartCityWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/")]
     [ApiController]
     public class AnimalController : ControllerBase
     {

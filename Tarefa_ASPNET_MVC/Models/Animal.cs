@@ -17,5 +17,8 @@ namespace Tarefa_ASPNET_MVC.Models
         public string Especie { get; set; }
 
         public string Peso { get; set; }
+
+        // Foreing key
+        public int IdPessoa { get; set; }
     }
 }

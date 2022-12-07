@@ -11,6 +11,11 @@ namespace FiapSmartCityWebAPI.Repository
         public AnimalRepository()
         { 
             context = new DataBaseContext();
+            Animal novoAnimal = new Animal() {
+                Nome = "",
+                Especie = "",
+                Peso = "",
+            };
         }
 
         public IList<Animal> Listar()

@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Tarefa_ASPNET_MVC.Utils;
 using Tarefa_ASPNET_MVC.Repository.Context;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Tarefa_ASPNET_MVC.Repository
 {
@@ -39,9 +39,9 @@ namespace Tarefa_ASPNET_MVC.Repository
             {
                 // Recuperar os dados da tabela PESSOA
                 Pessoa pessoa = new Pessoa();
-                pessoa.Id = Convert.ToInt32(Reader["IDPESSOA"]);
+                pessoa.IdPessoa = Convert.ToInt32(Reader["IDPESSOA"]);
                 pessoa.Nome = Reader["NOME"].ToString();
-                pessoa.Telefone = Reader["PHONE"].ToString();
+                pessoa.Phone = Reader["PHONE"].ToString();
 
                 listaPessoa.Add(pessoa);
             }
@@ -88,7 +88,17 @@ namespace Tarefa_ASPNET_MVC.Repository
             context.Pessoa.Add(pessoa);
             context.SaveChanges();
         }
+
+        /*
         public Pessoa Consultar(int id)
+        {
+            var pessoa = context.Pessoa.Include(t => t.IdPessoa)
+                .FirstOrDefault(p => p.IdProduto == id);
+            return pessoa;
+        }
+        */
+
+        /*public Pessoa Consultar(int id)
         {
 
             Pessoa pessoa = new Pessoa();
@@ -113,9 +123,9 @@ namespace Tarefa_ASPNET_MVC.Repository
                 while (dataReader.Read())
                 {
                     // Recupera os dados
-                    pessoa.Id = Convert.ToInt32(dataReader["IDPESSOA"]);
+                    pessoa.IdPessoa = Convert.ToInt32(dataReader["IDPESSOA"]);
                     pessoa.Nome = dataReader["NOME"].ToString();
-                    pessoa.Telefone = dataReader["PHONE"].ToString();
+                    pessoa.Phone = dataReader["PHONE"].ToString();
                 }
 
                 connection.Close();
@@ -124,7 +134,7 @@ namespace Tarefa_ASPNET_MVC.Repository
 
             // Retorna a lista
             return pessoa;
-        }
+        }*/
 
 
         public void Alterar(Pessoa pessoa)
@@ -146,8 +156,8 @@ namespace Tarefa_ASPNET_MVC.Repository
                 command.Parameters.Add("@PHONE", SqlDbType.Text);
                 command.Parameters.Add("@ID", SqlDbType.Int);
                 command.Parameters["@NOME"].Value = pessoa.Nome;
-                command.Parameters["@PHONE"].Value = pessoa.Telefone;
-                command.Parameters["@ID"].Value = pessoa.Id;
+                command.Parameters["@PHONE"].Value = pessoa.Phone;
+                command.Parameters["@ID"].Value = pessoa.IdPessoa;
 
                 // Abrindo a conexão com  o Banco
                 connection.Open();
