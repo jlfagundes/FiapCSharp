@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+ï»¿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -20,7 +20,7 @@ builder.Services.ConfigureSwaggerGen(setup =>
 
 var app = builder.Build();
 
-// Retirado do if para rodar o ambiente de produção
+// Retirado do if para rodar o ambiente de producao
 app.UseSwagger();
 app.UseSwaggerUI();
 

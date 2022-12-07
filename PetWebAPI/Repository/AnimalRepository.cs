@@ -18,6 +18,11 @@ namespace PetWebAPI.Repository
             return context.Animal.ToList();
         }
 
+        public Animal Consultar(int id)
+        {
+            return context.Animal.Find(id);
+        }
+
         public void Inserir(Animal animal)
         {
             context.Animal.Add(animal);
